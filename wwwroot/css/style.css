@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.head-1{
+    width: 100%;
+    height: 104.75px;
+    background-color: black;
+}
+
+.head-2{
+    width: 74.21875%;
+    height: 100%;
+    margin: auto;
+}
+
+.h-1{
+    width: 42%;
+    height: 100%;
+    float: left;
+    /* background-color: aqua; */
+}
+
+.h-2{
+    width: 16%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    
+}
+
+.h-2 img{
+    width: 74.0131579%;
+    height: auto;
+    padding: 10px;
+}
+
+.h-3{
+    width: 42%;
+    height: 100%;
+    float: left;
+    background-color: orange;
+}
+
+.h-4{
+    width: 100%;
+    height: 43.9140811%;
+    background-color: palegreen;
+}
