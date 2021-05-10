@@ -260,6 +260,9 @@ namespace MochiSweets.Migrations
                     b.Property<int>("productID")
                         .HasColumnType("int");
 
+                    b.Property<int>("quantity")
+                        .HasColumnType("int");
+
                     b.HasKey("tasteID", "productID");
 
                     b.HasIndex("productID");

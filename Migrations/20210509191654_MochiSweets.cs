@@ -234,7 +234,8 @@ namespace MochiSweets.Migrations
                 columns: table => new
                 {
                     tasteID = table.Column<int>(nullable: false),
-                    productID = table.Column<int>(nullable: false)
+                    productID = table.Column<int>(nullable: false),
+                    quantity = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

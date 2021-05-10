@@ -118,6 +118,7 @@ namespace MochiSweets.Models
       modelBuilder.Entity<ProductsTaste>(entity =>
       {
         entity.HasKey(x => new { x.tasteID, x.productID });
+        entity.Property(x => x.quantity);
       });
 
       modelBuilder.Entity<SaleOff>(entity =>

@@ -100,3 +100,4 @@ C:\c_sharp\MochiSweets\MochiSweets\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2
 C:\c_sharp\MochiSweets\MochiSweets\bin\Debug\net5.0\Pomelo.JsonObject.dll
 C:\c_sharp\MochiSweets\MochiSweets\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\c_sharp\MochiSweets\MochiSweets\bin\Debug\net5.0\Microsoft.Bcl.HashCode.dll
+C:\c_sharp\MochiSweets\MochiSweets\obj\Debug\net5.0\Razor\Views\Home\Tuyetngu.cshtml.g.cs

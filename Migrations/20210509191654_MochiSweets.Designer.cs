@@ -9,7 +9,7 @@ using MochiSweets.Models;
 namespace MochiSweets.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20210507155325_MochiSweets")]
+    [Migration("20210509191654_MochiSweets")]
     partial class MochiSweets
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -260,6 +260,9 @@ namespace MochiSweets.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("productID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("quantity")
                         .HasColumnType("int");
 
                     b.HasKey("tasteID", "productID");
