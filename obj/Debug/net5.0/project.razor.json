@@ -15624,6 +15624,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Product\\ProductList.cshtml",
+      "TargetPath": "Views\\Product\\ProductList.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Home\\Tuyetngu.cshtml",
       "TargetPath": "Views\\Home\\Tuyetngu.cshtml",
       "FileKind": "mvc"
