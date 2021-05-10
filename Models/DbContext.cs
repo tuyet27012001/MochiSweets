@@ -6,7 +6,6 @@ namespace MochiSweets.Models
   public class MyDbContext : DbContext
   {
     public DbSet<Product> Product { get; set; }
-    public DbSet<ProductsTaste> ProductsTaste { get; set; }
     public DbSet<Taste> Taste { get; set; }
     public DbSet<SaleOff> SaleOff { get; set; }
     public DbSet<Image> Image { get; set; }
@@ -115,11 +114,6 @@ namespace MochiSweets.Models
         entity.Property(x => x.categoryID);
       });
 
-      modelBuilder.Entity<ProductsTaste>(entity =>
-      {
-        entity.HasKey(x => new { x.tasteID, x.productID });
-        entity.Property(x => x.quantity);
-      });
 
       modelBuilder.Entity<SaleOff>(entity =>
       {
@@ -132,7 +126,8 @@ namespace MochiSweets.Models
       {
         entity.HasKey(x => x.tasteID);
         entity.Property(x => x.tasteName);
-       
+        entity.Property(x => x.quantity);
+        entity.Property(x => x.categoryID);
       });
      
 

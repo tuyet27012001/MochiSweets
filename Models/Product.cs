@@ -17,14 +17,6 @@ namespace MochiSweets.Models
       public int categoryID {get; set;}
       [ForeignKey("categoryID")]
       public virtual Category Category {get; set;}
-      // public virtual ICollection<SaleOff> SaleOffs {get; set;}
-      // public virtual ICollection<Image> Images {get; set;}
-   
-      
-     
-     // public List<Product> listProduct = null;
-      // public virtual ICollection<ProductsTaste> ProductsTastes {get; set;}
-      
       public List<Image> ListImage { get; set; }
 
       public List<SaleOff> ListSaleOff { get; set; }

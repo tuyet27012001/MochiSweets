@@ -9,7 +9,7 @@ using MochiSweets.Models;
 namespace MochiSweets.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20210509191654_MochiSweets")]
+    [Migration("20210510172528_MochiSweets")]
     partial class MochiSweets
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -254,24 +254,6 @@ namespace MochiSweets.Migrations
                     b.ToTable("Product");
                 });
 
-            modelBuilder.Entity("MochiSweets.Models.ProductsTaste", b =>
-                {
-                    b.Property<int>("tasteID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("productID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("tasteID", "productID");
-
-                    b.HasIndex("productID");
-
-                    b.ToTable("ProductsTaste");
-                });
-
             modelBuilder.Entity("MochiSweets.Models.SaleOff", b =>
                 {
                     b.Property<int>("saleID")
@@ -303,18 +285,18 @@ namespace MochiSweets.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("ProductsTasteproductID")
+                    b.Property<int>("categoryID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ProductsTastetasteID")
-                        .HasColumnType("int");
+                    b.Property<string>("quantity")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("tasteName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("tasteID");
 
-                    b.HasIndex("ProductsTastetasteID", "ProductsTasteproductID");
+                    b.HasIndex("categoryID");
 
                     b.ToTable("Taste");
                 });
@@ -376,21 +358,6 @@ namespace MochiSweets.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MochiSweets.Models.ProductsTaste", b =>
-                {
-                    b.HasOne("MochiSweets.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("productID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MochiSweets.Models.Taste", "Taste")
-                        .WithMany()
-                        .HasForeignKey("tasteID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("MochiSweets.Models.SaleOff", b =>
                 {
                     b.HasOne("MochiSweets.Models.Product", "Product")
@@ -402,9 +369,11 @@ namespace MochiSweets.Migrations
 
             modelBuilder.Entity("MochiSweets.Models.Taste", b =>
                 {
-                    b.HasOne("MochiSweets.Models.ProductsTaste", null)
+                    b.HasOne("MochiSweets.Models.Category", "Category")
                         .WithMany("ListTaste")
-                        .HasForeignKey("ProductsTastetasteID", "ProductsTasteproductID");
+                        .HasForeignKey("categoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

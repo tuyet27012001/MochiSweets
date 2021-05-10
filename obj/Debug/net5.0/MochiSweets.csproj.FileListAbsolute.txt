@@ -102,3 +102,6 @@ C:\c_sharp\MochiSweets\MochiSweets\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterface
 C:\c_sharp\MochiSweets\MochiSweets\bin\Debug\net5.0\Microsoft.Bcl.HashCode.dll
 C:\c_sharp\MochiSweets\MochiSweets\obj\Debug\net5.0\Razor\Views\Home\Tuyetngu.cshtml.g.cs
 C:\c_sharp\MochiSweets\MochiSweets\obj\Debug\net5.0\Razor\Views\Product\ProductList.cshtml.g.cs
+C:\c_sharp\MochiSweets\MochiSweets\obj\Debug\net5.0\Razor\Views\Admin\AddProduct.cshtml.g.cs
+C:\c_sharp\MochiSweets\MochiSweets\obj\Debug\net5.0\Razor\Views\Admin\Index.cshtml.g.cs
+C:\c_sharp\MochiSweets\MochiSweets\obj\Debug\net5.0\Razor\Views\Admin\Product.cshtml.g.cs

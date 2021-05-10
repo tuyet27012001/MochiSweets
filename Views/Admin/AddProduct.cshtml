@@ -1,3 +1,6 @@
+@{
+ViewData["Title"] = "AddProduct";
+}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,11 +39,12 @@
             </div>
             <div class="panel-body">
 
-                <form action="designer-finish.html" class="form-horizontal" role="form">
+                <form method="POST" action="/AddProductNew" class="form-horizontal" role="form">
 
                     <div class="form-group">
                         <label for="name" class="col-sm-3 control-label"> Category</label>
                         <div class="col-sm-9">
+
                             <label class="radio-inline">
                                 <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                                 Mochi Truyền thống
@@ -61,6 +65,12 @@
                         <label for="about" class="col-sm-3 control-label">Descreption</label>
                         <div class="col-sm-9">
                             <textarea class="form-control"></textarea>
+                        </div>
+                    </div> <!-- form-group // -->
+                      <div class="form-group">
+                        <label for="qty" class="col-sm-3 control-label">Amount</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="qty" id="qty" placeholder="calculator">
                         </div>
                     </div> <!-- form-group // -->
                     <div class="form-group">
