@@ -8060,11 +8060,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\PC\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\KienPC\\.nuget\\packages\\": {}
+>>>>>>> 6a3550548ce3139633bb5c952d65f97b26df19e1
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\PC\\OneDrive\\Máy tính\\New folder\\MochiSweets\\MochiSweets.csproj",
       "projectName": "MochiSweets",
       "projectPath": "C:\\Users\\PC\\OneDrive\\Máy tính\\New folder\\MochiSweets\\MochiSweets.csproj",
@@ -8074,12 +8079,21 @@
       "configFilePaths": [
         "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+=======
+      "projectUniqueName": "C:\\Users\\KienPC\\Desktop\\New folder\\MochiSweets\\MochiSweets.csproj",
+      "projectName": "MochiSweets",
+      "projectPath": "C:\\Users\\KienPC\\Desktop\\New folder\\MochiSweets\\MochiSweets.csproj",
+      "packagesPath": "C:\\Users\\KienPC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\KienPC\\Desktop\\New folder\\MochiSweets\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\KienPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> 6a3550548ce3139633bb5c952d65f97b26df19e1
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

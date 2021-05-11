@@ -12,6 +12,7 @@ namespace MochiSweets.Models
       // public virtual ICollection<Product> Products  {get; set;}
       
       public List<Product> ListProduct { get; set; }
+      public List<Taste> ListTaste { get; set; }
       public Category(){}
     }
 }

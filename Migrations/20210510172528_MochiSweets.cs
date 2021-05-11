@@ -107,6 +107,27 @@ namespace MochiSweets.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Taste",
+                columns: table => new
+                {
+                    tasteID = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    tasteName = table.Column<string>(nullable: true),
+                    quantity = table.Column<string>(nullable: true),
+                    categoryID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Taste", x => x.tasteID);
+                    table.ForeignKey(
+                        name: "FK_Taste_Category_categoryID",
+                        column: x => x.categoryID,
+                        principalTable: "Category",
+                        principalColumn: "categoryID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "DeliveryAddresses",
                 columns: table => new
                 {
@@ -229,46 +250,6 @@ namespace MochiSweets.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "ProductsTaste",
-                columns: table => new
-                {
-                    tasteID = table.Column<int>(nullable: false),
-                    productID = table.Column<int>(nullable: false),
-                    quantity = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProductsTaste", x => new { x.tasteID, x.productID });
-                    table.ForeignKey(
-                        name: "FK_ProductsTaste_Product_productID",
-                        column: x => x.productID,
-                        principalTable: "Product",
-                        principalColumn: "productID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Taste",
-                columns: table => new
-                {
-                    tasteID = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    tasteName = table.Column<string>(nullable: true),
-                    ProductsTasteproductID = table.Column<int>(nullable: true),
-                    ProductsTastetasteID = table.Column<int>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Taste", x => x.tasteID);
-                    table.ForeignKey(
-                        name: "FK_Taste_ProductsTaste_ProductsTastetasteID_ProductsTasteproduc~",
-                        columns: x => new { x.ProductsTastetasteID, x.ProductsTasteproductID },
-                        principalTable: "ProductsTaste",
-                        principalColumns: new[] { "tasteID", "productID" },
-                        onDelete: ReferentialAction.Restrict);
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_DeliveryAddresses_customerID",
                 table: "DeliveryAddresses",
@@ -300,39 +281,18 @@ namespace MochiSweets.Migrations
                 column: "categoryID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductsTaste_productID",
-                table: "ProductsTaste",
-                column: "productID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_SaleOff_productID",
                 table: "SaleOff",
                 column: "productID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Taste_ProductsTastetasteID_ProductsTasteproductID",
+                name: "IX_Taste_categoryID",
                 table: "Taste",
-                columns: new[] { "ProductsTastetasteID", "ProductsTasteproductID" });
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_ProductsTaste_Taste_tasteID",
-                table: "ProductsTaste",
-                column: "tasteID",
-                principalTable: "Taste",
-                principalColumn: "tasteID",
-                onDelete: ReferentialAction.Cascade);
+                column: "categoryID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_ProductsTaste_Product_productID",
-                table: "ProductsTaste");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_ProductsTaste_Taste_tasteID",
-                table: "ProductsTaste");
-
             migrationBuilder.DropTable(
                 name: "Account");
 
@@ -349,7 +309,13 @@ namespace MochiSweets.Migrations
                 name: "SaleOff");
 
             migrationBuilder.DropTable(
+                name: "Taste");
+
+            migrationBuilder.DropTable(
                 name: "Order");
+
+            migrationBuilder.DropTable(
+                name: "Product");
 
             migrationBuilder.DropTable(
                 name: "DeliveryAddresses");
@@ -358,19 +324,10 @@ namespace MochiSweets.Migrations
                 name: "PaymentsMethod");
 
             migrationBuilder.DropTable(
-                name: "Customer");
-
-            migrationBuilder.DropTable(
-                name: "Product");
-
-            migrationBuilder.DropTable(
                 name: "Category");
 
             migrationBuilder.DropTable(
-                name: "Taste");
-
-            migrationBuilder.DropTable(
-                name: "ProductsTaste");
+                name: "Customer");
         }
     }
 }

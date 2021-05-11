@@ -10,7 +10,7 @@ namespace MochiSweets.Models
       public DateTime startTime {get; set;}
       public DateTime endTime {get; set;}
       public int productID {get; set;}
-       [ForeignKey("productID")]
+      [ForeignKey("productID")]
      
       public virtual Product Product {get; set;}
       public SaleOff(){

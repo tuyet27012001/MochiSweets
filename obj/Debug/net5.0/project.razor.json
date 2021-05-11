@@ -15619,18 +15619,28 @@
   "RootNamespace": "MochiSweets",
   "Documents": [
     {
+      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Shared\\_AdminLayoutPage.cshtml",
+      "TargetPath": "Views\\Shared\\_AdminLayoutPage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Admin\\Product.cshtml",
+      "TargetPath": "Views\\Admin\\Product.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Product\\ProductList.cshtml",
-      "TargetPath": "Views\\Product\\ProductList.cshtml",
+      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Admin\\Index.cshtml",
+      "TargetPath": "Views\\Admin\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Home\\Tuyetngu.cshtml",
-      "TargetPath": "Views\\Home\\Tuyetngu.cshtml",
+      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Product\\ProductList.cshtml",
+      "TargetPath": "Views\\Product\\ProductList.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15646,6 +15656,11 @@
     {
       "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Admin\\AddProduct.cshtml",
+      "TargetPath": "Views\\Admin\\AddProduct.cshtml",
       "FileKind": "mvc"
     },
     {
