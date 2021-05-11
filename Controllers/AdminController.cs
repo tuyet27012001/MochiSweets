@@ -30,22 +30,43 @@ namespace MochiSweets.Controllers
       return View();
     }
 
-    [HttpGet("/Admin/AddProduct")]
+    [HttpPost("/Admin/AddProduct")]
     public IActionResult AddProduct(string productName, string imageUrl, string detail, int quantity, double price, int categoryID)
     {
       ViewBag.listCategory = adminService.GetListCategory();
-    //   try
-    //   {
-        adminService.AddProductNew(productName, imageUrl, detail, quantity, price,categoryID);
-        return View();
-    //   }
-    //   catch (System.Exception ex)
-    //   {
-    //     Console.WriteLine("Error : " + ex.Message);
-    //     return View();
-    //     throw;
-    //   }
-    //   return View();
+      //   try
+      //   {
+      if (productName != null)
+      {
+        Console.WriteLine("Tuyet Tuyet 1");
+        String img = "~/Admin/img/"+imageUrl;
+        Boolean x = adminService.AddProductNew(productName, img , detail, quantity, price, categoryID);
+        if (x == true)
+        {
+          Console.WriteLine("Tuyet Tuyet");
+        }
+        
+      }
+      else{
+          Console.WriteLine("Tuyet Tuyet 2");
+      }
+
+      return View();
+      //   }
+      //   catch (System.Exception ex)
+      //   {
+      //     Console.WriteLine("Error : " + ex.Message);
+      //     return View();
+      //     throw;
+      //   }
+      //   return View();
+    }
+
+    [HttpGet("/Admin/AddProduct")]
+    public IActionResult AddProduct()
+    {
+       ViewBag.listCategory = adminService.GetListCategory();
+      return View();
     }
 
     [HttpGet("/Admin/Product")]

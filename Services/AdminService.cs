@@ -32,7 +32,7 @@ namespace MochiSweets.Services
         var cate = dbContext.Product.FirstOrDefault();
         img.imageID = cate.productID;
         dbContext.Add(img);
-         dbContext.SaveChanges();
+        dbContext.SaveChanges();
         return true;
       }
       catch (System.Exception ex)
