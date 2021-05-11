@@ -30,7 +30,7 @@ namespace MochiSweets.Services
         Image img = new Image();
         img.imageUrl = imageUrl;
         var cate = dbContext.Product.FirstOrDefault();
-        img.imageID = cate.productID;
+        img.productID = cate.productID;
         dbContext.Add(img);
         dbContext.SaveChanges();
         return true;

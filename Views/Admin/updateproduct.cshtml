@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MS Admin 2 - Product</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link href="css/updateproduct.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <section class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">UPDATE PRODUCT</h3>
+            </div>
+            <div class="panel-body">
+
+                <form action="designer-finish.html" class="form-horizontal" role="form">
+
+                    <div class="form-group">
+                        <label for="name" class="col-sm-3 control-label"> Category</label>
+                        <div class="col-sm-9">
+                            <label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                Mochi Truyền thống
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                Nama Mochi
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-3 control-label">Name Product</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="name">
+                        </div>
+                    </div> <!-- form-group // -->
+                    <div class="form-group">
+                        <label for="about" class="col-sm-3 control-label">Descreption</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control"></textarea>
+                        </div>
+                    </div> <!-- form-group // -->
+                    <div class="form-group">
+                        <label for="qty" class="col-sm-3 control-label">Quantity</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="qty" id="qty" placeholder="quantity">
+                        </div>
+                    </div> <!-- form-group // -->
+                    <!-- form-group // -->
+                    <div class="form-group">
+                        <label for="name" class="col-sm-3 control-label">Images Product</label>
+                        <div class="col-sm-3">
+                            <label class="control-label small" for="file_img">Images (jpg/png):</label> <input
+                                type="file" name="file_img">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Sale Time</label>
+                            <div class="col-sm-3">
+                                <label class="control-label small" for="date_start">Start: </label>
+                                <input type="text" class="form-control" name="date_start" id="date_start"
+                                    placeholder="date_start">
+                            </div>
+                            <div class="col-sm-3">
+                                <label class="control-label small" for="date_finish">Finish:</label>
+                                <input type="text" class="form-control" name="date_finish" id="date_finish"
+                                    placeholder="date_finish">
+                            </div>
+                            <div class="col-sm-3">
+                                <label class="control-label small" for="price">Price Sale:</label>
+                                <input type="text" class="form-control" name="price_sale" id="price_sale"
+                                    placeholder="price_sale">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="control-label small" for="file_img">Files:</label> <input type="file"
+                                name="file_archive">
+                        </div>
+                    </div><!-- form-group -->
+                    <hr>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </div> <!-- form-group // -->
+                </form>
+
+            </div><!-- panel-body // -->
+        </section><!-- panel// -->
+
+
+    </div> <!-- container// -->
+</body>
