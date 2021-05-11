@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MochiSweets.Models;
+using MochiSweets.Services;
 
 namespace MochiSweets
 {
@@ -24,6 +26,8 @@ namespace MochiSweets
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddControllersWithViews();
+      services.AddScoped<MyDbContext, MyDbContext>();
+      services.AddScoped<AdminService, AdminService>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
