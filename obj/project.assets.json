@@ -8060,26 +8060,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tuyet tuyet\\.nuget\\packages\\": {}
+    "C:\\Users\\KienPC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\c_sharp\\MochiSweets\\MochiSweets\\MochiSweets.csproj",
+      "projectUniqueName": "C:\\Users\\KienPC\\Desktop\\New folder\\MochiSweets\\MochiSweets.csproj",
       "projectName": "MochiSweets",
-      "projectPath": "C:\\c_sharp\\MochiSweets\\MochiSweets\\MochiSweets.csproj",
-      "packagesPath": "C:\\Users\\tuyet tuyet\\.nuget\\packages\\",
-      "outputPath": "C:\\c_sharp\\MochiSweets\\MochiSweets\\obj\\",
+      "projectPath": "C:\\Users\\KienPC\\Desktop\\New folder\\MochiSweets\\MochiSweets.csproj",
+      "packagesPath": "C:\\Users\\KienPC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\KienPC\\Desktop\\New folder\\MochiSweets\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\tuyet tuyet\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\KienPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
