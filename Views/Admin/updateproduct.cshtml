@@ -1,3 +1,7 @@
+@{
+    ViewData["Title"] = "ProductDetail";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,50 +36,80 @@
 
         <section class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">UPDATE PRODUCT</h3>
+                <h3 class="panel-title">PRODUCT DETAL</h3>
             </div>
             <div class="panel-body">
 
-                <form action="designer-finish.html" class="form-horizontal" role="form">
-
+                <form action="/Admin/updateproduct" class="form-horizontal" role="form">
                     <div class="form-group">
                         <label for="name" class="col-sm-3 control-label"> Category</label>
                         <div class="col-sm-9">
-                            <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                Mochi Truyền thống
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                Nama Mochi
-                            </label>
+                            @foreach (var item in ViewBag.listCategory)
+                            {
+                                @if (item.categoryID == ViewBag.product.categoryID)
+                                {
+                                    <label class="radio-inline">
+                                        <input type="radio" checked name="categoryID" id="inlineRadio1"
+                                    value="@item.categoryID">
+                                        @item.categoryName
+                                    </label>
+                                }
+                                else
+                                {
+                                    <label class="radio-inline">
+                                        <input type="radio" name="categoryID" id="inlineRadio1" value="@item.categoryID">
+                                        @item.categoryName
+                                    </label>
+                                }
+
+                            }
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="name" class="col-sm-3 control-label">Name Product</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="name">
+                            <input type="text" class="form-control" name="productName" id="name"
+                                value="@ViewBag.product.productName">
                         </div>
                     </div> <!-- form-group // -->
                     <div class="form-group">
                         <label for="about" class="col-sm-3 control-label">Descreption</label>
                         <div class="col-sm-9">
-                            <textarea class="form-control"></textarea>
+                            <textarea class="form-control" name="detail">@ViewBag.product.detail</textarea>
                         </div>
-                    </div> <!-- form-group // -->
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="qty" class="col-sm-3 control-label">Amount</label>
+                        <div class="col-sm-3">
+                            <input type="number" min="0" class="form-control" name="price" id="qty"
+                                value="@ViewBag.product.price">
+                        </div>
+                    </div>
+                    <!-- form-group // -->
                     <div class="form-group">
                         <label for="qty" class="col-sm-3 control-label">Quantity</label>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" name="qty" id="qty" placeholder="quantity">
+                            <input type="text" class="form-control" name="quantity" id="qty"
+                                value="@ViewBag.product.quantity">
                         </div>
                     </div> <!-- form-group // -->
                     <!-- form-group // -->
                     <div class="form-group">
                         <label for="name" class="col-sm-3 control-label">Images Product</label>
-                        <div class="col-sm-3">
+                        @* <div class="col-sm-3">
                             <label class="control-label small" for="file_img">Images (jpg/png):</label> <input
-                                type="file" name="file_img">
-                        </div>
+                            type="file" name="file_img">
+                            </div> *@
+                        @foreach (var i in ViewBag.ListImage)
+                        {
+                            @if (ViewBag.product.productID == i.productID)
+                            {
+                                <td><img src="@i.imageUrl" width="100px" height="70px"></td>
+                            }
+
+                        }
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Sale Time</label>
                             <div class="col-sm-3">

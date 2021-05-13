@@ -7,6 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MochiSweets.Models;
 using MochiSweets.Services;
+using System.Security.Cryptography;
+using Microsoft.AspNetCore.Http;
+using System.Net.Http.Headers;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+
 
 namespace MochiSweets.Controllers
 {
@@ -27,28 +33,36 @@ namespace MochiSweets.Controllers
     [HttpGet("/Admin/Index")]
     public IActionResult Index()
     {
+      
       return View();
     }
 
     [HttpPost("/Admin/AddProduct")]
-    public IActionResult AddProduct(string productName, string imageUrl, string detail, int quantity, double price, int categoryID)
+    public IActionResult AddProduct(string productName, List<string> imageUrl, string detail, int quantity, double price, int categoryID)
     {
+      
       ViewBag.listCategory = adminService.GetListCategory();
-      //   try
-      //   {
+      
+      List<Image> img = new List<Image>();
       if (productName != null)
       {
-        Console.WriteLine("Tuyet Tuyet 1");
-        String img = "~/Admin/img/"+imageUrl;
+        foreach (var item in imageUrl)
+        {
+          Image i = new Image();
+          i.imageUrl = "/Admin/img/" + item;
+          img.Add(i);
+         
+        }
+
         Boolean x = adminService.AddProductNew(productName, img , detail, quantity, price, categoryID);
         if (x == true)
         {
-          Console.WriteLine("Tuyet Tuyet");
+          return Redirect("/Admin/Product");
         }
         
       }
       else{
-          Console.WriteLine("Tuyet Tuyet 2");
+          // Console.WriteLine("Tuyet Tuyet 2");
       }
 
       return View();
@@ -72,6 +86,18 @@ namespace MochiSweets.Controllers
     [HttpGet("/Admin/Product")]
     public IActionResult Product()
     {
+      ViewBag.listProduct = adminService.GetListProduct();
+      ViewBag.listImage = adminService.GetListImage();
+      return View();
+    }
+
+    [HttpGet("/Admin/updateproduct")]
+    public IActionResult updateproduct(int productID)
+    {
+      // int?  productID = HttpContext.Session.GetInt32("productID");
+      ViewBag.listCategory = adminService.GetListCategory();
+      ViewBag.product = adminService.getProductByProductID(productID);
+      ViewBag.listImage = adminService.GetListImage();
       return View();
     }
 

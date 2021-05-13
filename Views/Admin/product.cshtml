@@ -1,6 +1,6 @@
 @{
-ViewData["Title"] = "ListProduct";
-Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+    ViewData["Title"] = "ListProduct";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
 }
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+    <link href="css/list-product.css" rel="stylesheet">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -27,7 +27,6 @@ Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
 
 </head>
 
@@ -38,27 +37,42 @@ Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
                 <tr>
                     <th scope="col">&nbsp;</th>
                     <th scope="col">PRODUCT NAME</th>
-                    <th scope="col">UNIT SOLD</th>
+                    <th scope="col">PRICE</th>
                     <th scope="col">IN STOCK</th>
                     <th scope="col">IMAGES</th>
                     <th scope="col">&nbsp;</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row"><input type="checkbox" /></th>
-                    <td class="tm-product-name">Product 1</td>
-                    <td>1,450</td>
-                    <td>550</td>
-                    <td><img src="img/Mochi-sweets_Kogane_02.jpg" width="100px" height="70px"></td>
-                </tr>
-                <tr>
+                @foreach (var item in ViewBag.ListProduct)
+                {
+                    @* string i = item.ListImage.FirstOrDefault().imageUrl; *@
+                    <tr>
+                        <th scope="row"><input type="checkbox" /></th>
+                        <td class="tm-product-name"><a href="/Admin/updateproduct?productID=@item.productID"
+                            class="text-a">@item.productName</a></td>
+                        <td>@item.price</td>
+                        <td>@item.quantity</td>
+
+                        @foreach (var i in ViewBag.ListImage)
+                        {
+                            @if (item.productID == i.productID)
+                            {
+                               <td><img src="@i.imageUrl" width="100px" height="70px"></td>
+                                break;
+                            }
+
+                        }
+                        </tr>
+                }
+
+                @* <tr>
                     <th scope="row"><input type="checkbox" /></th>
                     <td class="tm-product-name">Product 2</td>
                     <td>1,250</td>
                     <td>750</td>
                     <td><img src="img/Mochi-sweets_Kogane_03.jpg" width="100px" height="70px"></td>
-                </tr>
+                    </tr> *@
             </tbody>
         </table>
         <hr>
