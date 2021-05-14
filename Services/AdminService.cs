@@ -23,7 +23,7 @@ namespace MochiSweets.Services
         req.price = price;
         req.detail = detail;
         req.quantity = quantity;
-        req.product_status = "0";
+        req.product_status = 0;
         req.categoryID = categoryID;
         req.ListImage = imageUrl;
         dbContext.Add(req);
@@ -82,14 +82,6 @@ namespace MochiSweets.Services
       Product product = dbContext.Product.FirstOrDefault(p => p.productID == productID);
       product.ListImage = dbContext.Image.Where(x => x.productID == productID).ToList();
       return product;
-      // Seller seller = dbContext.Seller.FirstOrDefault(x => x.UserId == userId);
-      // seller.SellerCategorys = dbContext.SellerCategory.Where(x => x.SellerId == seller.SellerId).ToList();
-      // List<Category> listCategory = new List<Category>();
-      // foreach (var item in seller.SellerCategorys)
-      // {
-      //   listCategory.Add(dbContext.Category.FirstOrDefault(x => x.CategoryId == item.CategoryId));
-      // }
-      // return listCategory;
     }
   }
 }

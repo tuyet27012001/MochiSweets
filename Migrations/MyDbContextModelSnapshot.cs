@@ -239,8 +239,8 @@ namespace MochiSweets.Migrations
                     b.Property<string>("productName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<string>("product_status")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<int>("product_status")
+                        .HasColumnType("int");
 
                     b.Property<int>("quantity")
                         .HasColumnType("int");

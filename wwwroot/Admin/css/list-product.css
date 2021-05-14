@@ -7,3 +7,37 @@
   color: #4e73df;
   text-decoration: none;
 }
+
+.boxAction{
+  width: 10px;
+  padding: 5px;
+}
+
+.boxS {
+  height: 80px;
+
+}
+
+.fa-search:before {
+  content: "\f002";
+}
+
+#box-search{
+  width: 30%;
+  float: right;
+  margin-left: 10px;
+  border: #4e73df solid 2px;
+  border-right: #4e73df solid 1px;
+  border-radius: 5px;
+}
+
+#boxAdd{
+  width: 20%;
+  float: right;
+  margin-left: 20px;
+  height: 42px;
+}
+
+.textL{
+  height: 50px;
+}

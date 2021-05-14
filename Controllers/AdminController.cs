@@ -62,18 +62,10 @@ namespace MochiSweets.Controllers
         
       }
       else{
-          // Console.WriteLine("Tuyet Tuyet 2");
+        
       }
 
       return View();
-      //   }
-      //   catch (System.Exception ex)
-      //   {
-      //     Console.WriteLine("Error : " + ex.Message);
-      //     return View();
-      //     throw;
-      //   }
-      //   return View();
     }
 
     [HttpGet("/Admin/AddProduct")]

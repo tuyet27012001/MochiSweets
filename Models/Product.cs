@@ -13,7 +13,7 @@ namespace MochiSweets.Models
       public double price {get; set ; }
       public string detail {get; set;}
       public int quantity {get; set;}
-      public string product_status {get; set;}
+      public int product_status {get; set;}
       public int categoryID {get; set;}
       [ForeignKey("categoryID")]
       public virtual Category Category {get; set;}

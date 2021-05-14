@@ -92,7 +92,7 @@ namespace MochiSweets.Migrations
                     price = table.Column<double>(nullable: false),
                     detail = table.Column<string>(nullable: true),
                     quantity = table.Column<int>(nullable: false),
-                    product_status = table.Column<string>(nullable: true),
+                    product_status = table.Column<int>(nullable: false),
                     categoryID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

@@ -15619,6 +15619,11 @@
   "RootNamespace": "MochiSweets",
   "Documents": [
     {
+      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Admin\\updateproduct.cshtml",
+      "TargetPath": "Views\\Admin\\updateproduct.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Shared\\_AdminLayoutPage.cshtml",
       "TargetPath": "Views\\Shared\\_AdminLayoutPage.cshtml",
       "FileKind": "mvc"

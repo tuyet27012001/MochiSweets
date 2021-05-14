@@ -9,7 +9,7 @@ using MochiSweets.Models;
 namespace MochiSweets.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20210510172528_MochiSweets")]
+    [Migration("20210513172550_MochiSweets")]
     partial class MochiSweets
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -241,8 +241,8 @@ namespace MochiSweets.Migrations
                     b.Property<string>("productName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<string>("product_status")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<int>("product_status")
+                        .HasColumnType("int");
 
                     b.Property<int>("quantity")
                         .HasColumnType("int");
