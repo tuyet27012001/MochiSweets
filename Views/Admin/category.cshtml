@@ -1,0 +1,109 @@
+@{
+    ViewData["Title"] = "ListCategory";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MS Admin 2 - Category</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="css/list-category.css" rel="stylesheet">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    @* <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet"> *@
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container mt-5">
+         <div class="textL">
+            <h1>List Category</h1>
+        </div>
+        <div class="boxS">
+            <div>
+                <a href="AddCategory" class="btn btn-primary btn-block text-uppercase mb-3" id = "boxAdd">Add New Category</a>
+            </div>
+            <div >
+                <form id = "box-search"
+                class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                        aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            </div>   
+        </div>
+        
+        <table class="table  tm-table-small tm-category-table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">CATEGORY NAME</th>
+                    <th scope="col">STATUS</th>
+                    <th scope="col"></th>
+                    <th scope="col">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.ListCategory)
+                {
+                    <tr>
+                        <td>@item.categoryID</td>
+                        <td class="tm-category-name"><a href="/Admin/category?categoryID=@item.categoryID"
+                            class="text-a">@item.categoryName</a></td>
+                        @foreach (var i in ViewBag.ListImage)
+                        {
+                            @if (item.categorytID == i.categoryID)
+                            {
+                               <td><img src="Mochi-sweets_Kogane02.jpg" width="100px" height="70px"></td>
+                                break;
+                            }
+
+                        }
+                        @if(@item.category_status == 0){
+                           <td>Đang bán</td>
+                        }
+                        else if(@item.category_status == 1){
+                           <td>Đã ngừng bán</td>
+                        }
+                        
+                        <td><a href = "/Admin/updateproduct?productID=@item.productID" class = "boxAction">Sửa</a>
+                            <a href = "#" class = "boxAction">Xóa</a>
+                        </td>
+                        </tr>
+                }
+            </tbody>
+        </table>
+        <hr>
+    </div>
+</body>
+
+</html>

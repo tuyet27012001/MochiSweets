@@ -8060,19 +8060,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tuyet tuyet\\.nuget\\packages\\": {}
+    "C:\\Users\\PC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\c_sharp\\MochiSweets\\MochiSweets\\MochiSweets.csproj",
+      "projectUniqueName": "C:\\Users\\PC\\OneDrive\\Máy tính\\Mochi Sweet\\MochiSweets\\MochiSweets.csproj",
       "projectName": "MochiSweets",
-      "projectPath": "C:\\c_sharp\\MochiSweets\\MochiSweets\\MochiSweets.csproj",
-      "packagesPath": "C:\\Users\\tuyet tuyet\\.nuget\\packages\\",
-      "outputPath": "C:\\c_sharp\\MochiSweets\\MochiSweets\\obj\\",
+      "projectPath": "C:\\Users\\PC\\OneDrive\\Máy tính\\Mochi Sweet\\MochiSweets\\MochiSweets.csproj",
+      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PC\\OneDrive\\Máy tính\\Mochi Sweet\\MochiSweets\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\tuyet tuyet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8139,16 +8139,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\c_sharp\\MochiSweets\\MochiSweets\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
