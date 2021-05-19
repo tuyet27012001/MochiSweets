@@ -14,7 +14,7 @@
     <meta name="author" content="">
 
     <title>MS Admin 2 - Product</title>
-
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -40,7 +40,20 @@
             </div>
             <div class="panel-body">
 
-                <form action="/Admin/updateproduct" class="form-horizontal" role="form">
+                <form action="/Admin/updateproduct" method="POST" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="name" class="col-sm-3 control-label">Product Id : @ViewBag.product.productID</label>
+                        <div class="col-sm-9">
+                            <input hidden name="productID" value="@ViewBag.product.productID">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-3 control-label">Name Product</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="productName" id="name"
+                                value="@ViewBag.product.productName">
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="name" class="col-sm-3 control-label"> Category</label>
                         <div class="col-sm-9">
@@ -61,25 +74,16 @@
                                         @item.categoryName
                                     </label>
                                 }
-
                             }
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="name" class="col-sm-3 control-label">Name Product</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="productName" id="name"
-                                value="@ViewBag.product.productName">
-                        </div>
-                    </div> <!-- form-group // -->
+                    <!-- form-group // -->
                     <div class="form-group">
                         <label for="about" class="col-sm-3 control-label">Descreption</label>
                         <div class="col-sm-9">
                             <textarea class="form-control" name="detail">@ViewBag.product.detail</textarea>
                         </div>
                     </div>
-
-
                     <div class="form-group">
                         <label for="qty" class="col-sm-3 control-label">Amount</label>
                         <div class="col-sm-3">
@@ -97,16 +101,52 @@
                     </div> <!-- form-group // -->
                     <!-- form-group // -->
                     <div class="form-group">
+                        <label for="name" class="col-sm-3 control-label">Status</label>
+                        <div class="col-sm-9">
+                            @if (ViewBag.product.product_status == 0)
+                            {
+                                <label class="radio-inline">
+                                    <input type="radio" checked name="product_status" id="inlineRadio1" value="0">
+                                    Đang bán
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="product_status" id="inlineRadio1" value="1">
+                                    Đã ngừng bán
+                                </label>
+                            }
+                            else
+                            {
+                                <label class="radio-inline">
+                                    <input type="radio" name="product_status" id="inlineRadio1" value="0">
+                                    Đang bán
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" checked name="product_status" id="inlineRadio1" value="1">
+                                    Đã ngừng bán
+                                </label>
+                            }
+
+
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="name" class="col-sm-3 control-label">Images Product</label>
-                        @* <div class="col-sm-3">
-                            <label class="control-label small" for="file_img">Images (jpg/png):</label> <input
-                            type="file" name="file_img">
-                            </div> *@
+                        <div class="col-sm-3 field">
+                            <label class="control-label small" for="file_img">Images (jpg/png):</label>
+                            <input name="imageUrl" type="file" multiple>
+                        </div>
                         @foreach (var i in ViewBag.ListImage)
                         {
                             @if (ViewBag.product.productID == i.productID)
                             {
-                                <td><img src="@i.imageUrl" width="100px" height="70px"></td>
+                                <div class="boxImg">
+                                    <img src="@i.imageUrl" height="100%" width="200px" height="70px">
+                                    <div>
+                                        <a href="/Admin/deleteImage?imageID=@i.imageID" class="boxDelete">
+                                            <i class="far fa-trash-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             }
 
                         }
@@ -128,10 +168,10 @@
                                     placeholder="price_sale">
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        @* <div class="col-sm-3">
                             <label class="control-label small" for="file_img">Files:</label> <input type="file"
-                                name="file_archive">
-                        </div>
+                            name="file_archive">
+                            </div> *@
                     </div><!-- form-group -->
                     <hr>
                     <div class="form-group">
@@ -146,4 +186,42 @@
 
 
     </div> <!-- container// -->
+    @* <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function () {
+        if (window.File && window.FileList && window.FileReader) {
+        $("#files").on("change", function (e) {
+        var files = e.target.files,
+        filesLength = files.length;
+        for (var i = 0; i < filesLength; i++) {
+        var f = files[i]
+        var fileReader = new FileReader();
+        fileReader.onload = (function (e) {
+        var file = e.target;
+        $("<span class=\"pip\">" +
+        "<img width = \"200px\" class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+        "<br/><span class=\"remove\"></span>" +
+        "</span>").insertAfter("#files");
+        $(".remove").click(function () {
+        $(this).parent(".pip").remove();
+        });
+
+        // Old code here
+        /*$("<img></img>", {
+        class: "imageThumb",
+        src: e.target.result,
+        title: file.name + " | Click to remove"
+        }).insertAfter("#files").click(function(){$(this).remove();});*/
+
+        });
+        fileReader.readAsDataURL(f);
+        }
+        });
+        } else {
+        alert("Your browser doesn't support to File API")
+        }
+        });
+
+        </script> *@
+
 </body>

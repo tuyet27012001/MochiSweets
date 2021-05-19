@@ -23,11 +23,11 @@
 }
 
 #box-search{
-  width: 30%;
+  width: 62%;
   float: right;
   margin-left: 10px;
-  border: #4e73df solid 2px;
-  border-right: #4e73df solid 1px;
+  border: #4e73df solid 1px;
+  border-right: #4e73df solid 0px;
   border-radius: 5px;
 }
 
@@ -35,9 +35,78 @@
   width: 20%;
   float: right;
   margin-left: 20px;
-  height: 42px;
+  height: 41px;
 }
 
 .textL{
   height: 50px;
+}
+
+.tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.boxLimit{
+  margin: auto;
+  height: 100px;
+  width: 210px;
+  padding: auto;
+}
+
+.boxNext a i{
+  margin-top: 20px;
+  color: #4e73df;
+  font-size: 20px;
+  float: left;
+  padding: 20px;
+}
+
+.boxNext a i:hover{
+  color: #8fa9f5;
+}
+
+.boxNum{
+  height: 30px;
+  width: 30px;
+  /* background-color: aqua; */
+  margin-top: 36px;
+  float: left;
+  padding: 2px;
+  text-align: center;
+  color: black;
+  border: #4e73df solid 1px;
+}
+
+.boxNum a{
+  color: black;
+}
+
+.boxNum:hover{
+  background-color: #b9c7f0;
+}
+
+.boxNum a:hover{
+  color: black;
+  text-decoration: none;
+}
+
+.boxC{
+   background-color: #b9c7f0;
+}
+
+.boxSe{
+  float: right;
+    width: 500px;
+}
+
+.boxSelect Select{
+  border: #4e73df solid 1px;
+  border-radius: 5px;
+  height: 30px;
+  width: 36%;
+  outline: none;
+}
+
+.inputG{
+
 }

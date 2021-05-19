@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "oJ6zwAar/zhyew5idraRf5PDPLXXUecAQ4mKtA/0n7d5eMidWEtrlK+KWamCm3gp1px2fucC3SUJ89H9fiMb3g==",
+  "dgSpecHash": "07gpr19itYx217uN/HparokEU87pSORmNUclx7bMW1FxVgDv01q3jSRqBcbanpNDQqXFOkhuT1N4Ufo4zMkxJQ==",
   "success": true,
   "projectFilePath": "C:\\c_sharp\\MochiSweets\\MochiSweets\\MochiSweets.csproj",
   "expectedPackageFiles": [
@@ -154,12 +154,5 @@
     "C:\\Users\\tuyet tuyet\\.nuget\\packages\\system.xml.xpath\\4.0.1\\system.xml.xpath.4.0.1.nupkg.sha512",
     "C:\\Users\\tuyet tuyet\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.0.1\\system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\c_sharp\\MochiSweets\\MochiSweets\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

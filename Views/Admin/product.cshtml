@@ -39,29 +39,44 @@
 
 <body>
     <div class="container mt-5">
-         <div class="textL">
+        <div class="textL">
             <h1>List Product</h1>
         </div>
         <div class="boxS">
             <div>
-                <a href="AddProduct" class="btn btn-primary btn-block text-uppercase mb-3" id = "boxAdd">Add new product</a>
+                <a href="AddProduct" class="btn btn-primary btn-block text-uppercase mb-3" id="boxAdd">Add new
+                    product</a>
             </div>
-            <div >
-                <form id = "box-search"
-                class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                        aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="button">
-                            <i class="fas fa-search fa-sm"></i>
-                        </button>
+            <div>
+                <form
+                    class="boxSe d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+
+                    <div id="box-search" class="input-group inputG">
+                        <input type="text" name="search" class="form-control bg-light border-0 small"
+                            placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2"
+                            value="@ViewBag.search">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-search fa-sm"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </form>
-            </div>   
+                    <div class="boxSelect">
+                        <select name="category" value="@ViewBag.select">
+                            <option selected disabled>Category</option>
+                            @* <option>Category</option> *@
+                            <option>Tất cả</option>
+                            @foreach (var item in @ViewBag.listCategory)
+                            {
+                                <option>@item.categoryName</option>
+                            }
+
+                        </select>
+                    </div>
+                </form>
+            </div>
         </div>
-        
+
         <table class="table  tm-table-small tm-product-table">
             <thead>
                 <tr>
@@ -87,39 +102,68 @@
 
                         @foreach (var i in ViewBag.ListImage)
                         {
-                            @if (item.productID == i.productID)
+                            @if (item.productID == i.productID && i.imageUrl != null)
                             {
-                               <td><img src="@i.imageUrl" width="100px" height="70px"></td>
+                                <td><img src="@i.imageUrl" width="100px" height="70px"></td>
                                 break;
                             }
 
                         }
-                        @if(@item.product_status == 0){
-                           <td>Đang bán</td>
+                        @if (@item.product_status == 0)
+                        {
+                            <td>Đang bán</td>
                         }
-                        else if(@item.product_status == 1){
-                           <td>Đã ngừng bán</td>
+                        else if (@item.product_status == 1)
+                        {
+                            <td>Đã ngừng bán</td>
                         }
-                        
-                        <td><a href = "/Admin/updateproduct?productID=@item.productID" class = "boxAction">Sửa</a>
-                            <a href = "#" class = "boxAction">Xóa</a>
+
+                        <td><a href="/Admin/updateproduct?productID=@item.productID" class="boxAction">Sửa</a>
+                            <a href="/Admin/deleteProduct?productID=@item.productID" class="boxAction">Xóa</a>
                         </td>
-                        </tr>
+                    </tr>
                 }
 
-                @* <tr>
-                    <th scope="row"><input type="checkbox" /></th>
-                    <td class="tm-product-name">Product 2</td>
-                    <td>1,250</td>
-                    <td>750</td>
-                    <td><img src="img/Mochi-sweets_Kogane_03.jpg" width="100px" height="70px"></td>
-                    </tr> *@
             </tbody>
         </table>
-        <hr>
-        <!-- table container -->
-        @* <button class="btn btn-primary btn-block text-uppercase">
-            Delete selected products
-        </button> *@
+        <p>page : @ViewBag.page / @ViewBag.total</p>
+
+        <div class="boxLimit">
+            @if (@ViewBag.page != 1)
+            {
+                <div class="boxNext">
+                    <a href="?search=@ViewBag.search&&page=@ViewBag.previousPage"><i
+                        class="fas fa-angle-double-left"></i></a>
+                </div>
+            }
+            @if (@ViewBag.page != 1)
+            {
+                <div class="boxNum">
+                    <a href="?search=@ViewBag.search&&page=@ViewBag.previousPage">@ViewBag.previousPage</a>
+                </div>
+            }
+
+            @if (@ViewBag.total != 1 || @ViewBag.page == 1)
+            {
+                <div class="boxNum boxC">
+                    <a href="?search=@ViewBag.search&&page=@ViewBag.page">@ViewBag.page</a>
+                </div>
+            }
+            @if ((@ViewBag.total != 2 || (@ViewBag.page == 1 && @ViewBag.total != 1)) && @ViewBag.nextPage <=
+            @ViewBag.total)
+            {
+                <div class="boxNum">
+                    <a href="?search=@ViewBag.search&&page=@ViewBag.nextPage">@ViewBag.nextPage</a>
+                </div>
+            }
+
+            @if (@ViewBag.page != @ViewBag.total && @ViewBag.total != 0)
+            {
+                <div class="boxNext">
+                    <a href="?search=@ViewBag.search&&page=@ViewBag.nextPage"><i
+                        class="fas fa-angle-double-right"></i></a>
+                </div>
+            }
+        </div>
     </div>
 </body>
