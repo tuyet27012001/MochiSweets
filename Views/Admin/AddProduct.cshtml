@@ -37,7 +37,7 @@ Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
 
         <section class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">ADD PRODUCT</h3>
+                <h3 class="panel-title textMain">ADD PRODUCT</h3>
             </div>
             <div class="panel-body">
 
@@ -53,11 +53,6 @@ Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
                                 @item.categoryName
                             </label>
                         }
-                           
-                            @* <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                Nama Mochi
-                            </label> *@
                         </div>        
                     </div>
                     <div class="form-group">
@@ -85,11 +80,14 @@ Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
                         </div>
                     </div> <!-- form-group // -->
                     <!-- form-group // -->
-                    
                     <div class="form-group">
                         <label for="name" class="col-sm-3 control-label">Images Product</label>
                         <div class="col-sm-3">
-                            <label class="control-label small" for="file_img">Images (jpg/png):</label> 
+                            <label class="control-label small" for="file_img">Main photo (jpg/png):</label> 
+                            <input type="file" name="photo">
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="control-label small" for="file_img">Extra photo (jpg/png):</label> 
                             <input type="file" name="imageUrl" multiple>
                         </div>
                      </div><!-- form-group -->
@@ -105,7 +103,7 @@ Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
                     </div> form-group // -->
                     <hr>
                     <div class="form-group">
-                        <div class="col-sm-offset-3 col-sm-9">
+                        <div class="col-sm-offse0 t-3 col-sm-9">
                             <button type="submit" class="btn btn-primary">Save</button>
                         </div>
                     </div> <!-- form-group // -->

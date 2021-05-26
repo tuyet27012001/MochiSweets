@@ -15624,6 +15624,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Admin\\ListAccount.cshtml",
+      "TargetPath": "Views\\Admin\\ListAccount.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Admin\\AddCategory.cshtml",
+      "TargetPath": "Views\\Admin\\AddCategory.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Shared\\_AdminLayoutPage.cshtml",
       "TargetPath": "Views\\Shared\\_AdminLayoutPage.cshtml",
       "FileKind": "mvc"
@@ -15634,8 +15644,28 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Admin\\UpdateCategory.cshtml",
+      "TargetPath": "Views\\Admin\\UpdateCategory.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Admin\\ListFlavor.cshtml",
+      "TargetPath": "Views\\Admin\\ListFlavor.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Shared\\_Login.cshtml",
+      "TargetPath": "Views\\Shared\\_Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Admin\\category.cshtml",
+      "TargetPath": "Views\\Admin\\category.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15654,8 +15684,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Admin\\updateImage.cshtml",
+      "TargetPath": "Views\\Admin\\updateImage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Admin\\AddFlavor.cshtml",
+      "TargetPath": "Views\\Admin\\AddFlavor.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Admin\\LoginAdmin.cshtml",
+      "TargetPath": "Views\\Admin\\LoginAdmin.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15664,8 +15709,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Admin\\AddAccount.cshtml",
+      "TargetPath": "Views\\Admin\\AddAccount.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Admin\\AddProduct.cshtml",
       "TargetPath": "Views\\Admin\\AddProduct.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Admin\\ListCategory.cshtml",
+      "TargetPath": "Views\\Admin\\ListCategory.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\c_sharp\\MochiSweets\\MochiSweets\\Views\\Admin\\UpdateFlavor.cshtml",
+      "TargetPath": "Views\\Admin\\UpdateFlavor.cshtml",
       "FileKind": "mvc"
     },
     {

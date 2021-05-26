@@ -36,7 +36,7 @@
 
         <section class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">PRODUCT DETAL</h3>
+                <h3 class="panel-title textMain">PRODUCT DETAL</h3>
             </div>
             <div class="panel-body">
 
@@ -59,20 +59,23 @@
                         <div class="col-sm-9">
                             @foreach (var item in ViewBag.listCategory)
                             {
-                                @if (item.categoryID == ViewBag.product.categoryID)
+                                @if (item.categoryName != null)
                                 {
-                                    <label class="radio-inline">
-                                        <input type="radio" checked name="categoryID" id="inlineRadio1"
-                                    value="@item.categoryID">
-                                        @item.categoryName
-                                    </label>
-                                }
-                                else
-                                {
-                                    <label class="radio-inline">
-                                        <input type="radio" name="categoryID" id="inlineRadio1" value="@item.categoryID">
-                                        @item.categoryName
-                                    </label>
+                                    @if (item.categoryID == ViewBag.product.categoryID)
+                                    {
+                                        <label class="radio-inline">
+                                            <input type="radio" checked name="categoryID" id="inlineRadio1"
+                                        value="@item.categoryID">
+                                            @item.categoryName
+                                        </label>
+                                    }
+                                    else
+                                    {
+                                        <label class="radio-inline">
+                                            <input type="radio" name="categoryID" id="inlineRadio1" value="@item.categoryID">
+                                            @item.categoryName
+                                        </label>
+                                    }
                                 }
                             }
                         </div>
@@ -129,50 +132,45 @@
 
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="name" class="col-sm-3 control-label">Images Product</label>
-                        <div class="col-sm-3 field">
+                    <div class="form-group boxLinkImage">
+                        @* <label for="name" class="col-sm-3 control-label">Images Product</label>
+                            <div class="col-sm-3 field">
                             <label class="control-label small" for="file_img">Images (jpg/png):</label>
                             <input name="imageUrl" type="file" multiple>
-                        </div>
+                            </div>
+                        *@
                         @foreach (var i in ViewBag.ListImage)
                         {
                             @if (ViewBag.product.productID == i.productID)
                             {
-                                <div class="boxImg">
-                                    <img src="@i.imageUrl" height="100%" width="200px" height="70px">
-                                    <div>
-                                        <a href="/Admin/deleteImage?imageID=@i.imageID" class="boxDelete">
-                                            <i class="far fa-trash-alt"></i>
-                                        </a>
-                                    </div>
-                                </div>
+                                <a href="/Admin/updateImage?productID=@i.productID&&imageID=@i.imageID">Cập nhật ảnh</a>
+                                break;
                             }
-
                         }
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Sale Time</label>
-                            <div class="col-sm-3">
-                                <label class="control-label small" for="date_start">Start: </label>
-                                <input type="text" class="form-control" name="date_start" id="date_start"
-                                    placeholder="date_start">
-                            </div>
-                            <div class="col-sm-3">
-                                <label class="control-label small" for="date_finish">Finish:</label>
-                                <input type="text" class="form-control" name="date_finish" id="date_finish"
-                                    placeholder="date_finish">
-                            </div>
-                            <div class="col-sm-3">
-                                <label class="control-label small" for="price">Price Sale:</label>
-                                <input type="text" class="form-control" name="price_sale" id="price_sale"
-                                    placeholder="price_sale">
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Sale Time</label>
+                        <div class="col-sm-3">
+                            <label class="control-label small" for="date_start">Start: </label>
+                            <input type="text" class="form-control" name="date_start" id="date_start"
+                                placeholder="date_start">
                         </div>
-                        @* <div class="col-sm-3">
-                            <label class="control-label small" for="file_img">Files:</label> <input type="file"
-                            name="file_archive">
-                            </div> *@
-                    </div><!-- form-group -->
+                        <div class="col-sm-3">
+                            <label class="control-label small" for="date_finish">Finish:</label>
+                            <input type="text" class="form-control" name="date_finish" id="date_finish"
+                                placeholder="date_finish">
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="control-label small" for="price">Price Sale:</label>
+                            <input type="text" class="form-control" name="price_sale" id="price_sale"
+                                placeholder="price_sale">
+                        </div>
+                    </div>
+                    @* <div class="col-sm-3">
+                        <label class="control-label small" for="file_img">Files:</label> <input type="file"
+                        name="file_archive">
+                        </div> *@
+                    <!-- form-group -->
                     <hr>
                     <div class="form-group">
                         <div class="col-sm-offset-3 col-sm-9">

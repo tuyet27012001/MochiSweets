@@ -1,0 +1,99 @@
+@{
+  ViewData["Title"] = "Update Image";
+  Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>MS Admin 2 - Product</title>
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link href="css/updateproduct.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="container">
+
+    <section class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title textMain">UPDATE IMAGES</h3>
+      </div>
+      <div class="panel-body">
+        <form action="/Admin/updateImage" method="POST" class="form-horizontal" role="form">
+        <input hidden name="productID" value="@ViewBag.productID">
+        <input hidden name="imageID" value="@ViewBag.imageID">
+          <div class="form-group">
+            @* <label for="name" class="col-sm-3 control-label">Images Product</label> *@
+            @foreach (var i in ViewBag.ListImage)
+            {
+              @if (ViewBag.productID == i.productID)
+              {
+                <div class="boxImg boxImgMain">
+                  <img src="@i.imageUrl" height="100%" width="200px" height="70px">
+                </div>
+                break;
+              }
+
+            }
+            <div class="imgText">
+              <label class="control-label small">Choose a new photo to update the main photo
+                (jpg/png):</label>
+              <input type="file" name="photo">
+            </div>
+          </div>
+          <div class="form-group boxA">
+            <div class="col-sm-3 field boxAddImg">
+              <label class="control-label small" for="file_img">Add extra photo (jpg/png):</label>
+              <input name="imageUrl" type="file" multiple>
+            </div>
+            @foreach (var i in ViewBag.ListImage)
+            {
+              @if (ViewBag.productID == i.productID && i.imageID != ViewBag.imageID)
+              {
+                <div class="boxImg">
+                  <img src="@i.imageUrl" height="100%" width="200px" height="70px">
+                  <div>
+                    <a href="/Admin/deleteImage?imageID=@i.imageID&&im=@ViewBag.imageID" class="boxDelete">
+                      <i class="far fa-trash-alt"></i>
+                    </a>
+                  </div>
+                </div>
+              }
+
+            }
+          </div><!-- form-group -->
+          
+          <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </div> <!-- form-group // -->
+        </form>
+
+      </div><!-- panel-body // -->
+    </section><!-- panel// -->
+
+
+  </div>
+
+</body>

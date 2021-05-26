@@ -15,6 +15,7 @@ namespace MochiSweets.Models
       public int quantity {get; set;}
       public int product_status {get; set;}
       public int categoryID {get; set;}
+      public int numberOfCakes {get; set;}
       [ForeignKey("categoryID")]
       public virtual Category Category {get; set;}
       public List<Image> ListImage { get; set; }

@@ -324,3 +324,15 @@ C:\Users\PC\OneDrive\Máy tính\Mochi Sweet\MochiSweets\obj\Debug\net5.0\MochiSw
 C:\Users\PC\OneDrive\Máy tính\Mochi Sweet\MochiSweets\obj\Debug\net5.0\ref\MochiSweets.dll
 C:\Users\PC\OneDrive\Máy tính\Mochi Sweet\MochiSweets\obj\Debug\net5.0\MochiSweets.pdb
 C:\Users\PC\OneDrive\Máy tính\Mochi Sweet\MochiSweets\obj\Debug\net5.0\MochiSweets.genruntimeconfig.cache
+C:\c_sharp\MochiSweets\MochiSweets\obj\Debug\net5.0\Razor\Views\Admin\category.cshtml.g.cs
+C:\c_sharp\MochiSweets\MochiSweets\obj\Debug\net5.0\Razor\Views\Admin\updateImage.cshtml.g.cs
+C:\c_sharp\MochiSweets\MochiSweets\obj\Debug\net5.0\Razor\Views\Admin\ListCategory.cshtml.g.cs
+C:\c_sharp\MochiSweets\MochiSweets\obj\Debug\net5.0\Razor\Views\Admin\AddCategory.cshtml.g.cs
+C:\c_sharp\MochiSweets\MochiSweets\obj\Debug\net5.0\Razor\Views\Admin\UpdateCategory.cshtml.g.cs
+C:\c_sharp\MochiSweets\MochiSweets\obj\Debug\net5.0\Razor\Views\Admin\ListFlavor.cshtml.g.cs
+C:\c_sharp\MochiSweets\MochiSweets\obj\Debug\net5.0\Razor\Views\Admin\AddFlavor.cshtml.g.cs
+C:\c_sharp\MochiSweets\MochiSweets\obj\Debug\net5.0\Razor\Views\Admin\UpdateFlavor.cshtml.g.cs
+C:\c_sharp\MochiSweets\MochiSweets\obj\Debug\net5.0\Razor\Views\Admin\LoginAdmin.cshtml.g.cs
+C:\c_sharp\MochiSweets\MochiSweets\obj\Debug\net5.0\Razor\Views\Admin\ListAccount.cshtml.g.cs
+C:\c_sharp\MochiSweets\MochiSweets\obj\Debug\net5.0\Razor\Views\Admin\AddAccount.cshtml.g.cs
+C:\c_sharp\MochiSweets\MochiSweets\obj\Debug\net5.0\Razor\Views\Shared\_Login.cshtml.g.cs

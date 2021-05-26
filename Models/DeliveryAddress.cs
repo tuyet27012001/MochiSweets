@@ -13,7 +13,7 @@ namespace MochiSweets.Models
     public string district { get; set; }
     public string address { get; set; }
     public string customerName { get; set; }
-    public string addressStatus { get; set; }
+    public int addressStatus { get; set; }
     public string addressDefault { get; set; }
     public int customerID { get; set; }
     [ForeignKey("customerID")]

@@ -1,0 +1,90 @@
+
+@{
+ViewData["Title"] = "Admin - AddProduct";
+Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MS Admin 2 - Product</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link href="css/add-product.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <section class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title textMain">UPDATE TASTE</h3>
+            </div>
+            <div class="panel-body">
+
+                <form method="POST" action="UpdateFlavor" class="form-horizontal" role="form">
+                  <div class="form-group">
+                        <label for="name" class="col-sm-3 control-label">Taste Id : @ViewBag.taste.tasteID</label>
+                        <div class="col-sm-9">
+                            <input hidden name="tasteID" value="@ViewBag.taste.tasteID">
+                             <input hidden name="categoryID" value="@ViewBag.categoryID">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-3 control-label">Name Taste</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="tasteName" id="name"
+                                value="@ViewBag.taste.tasteName">
+                        </div>
+                    </div> <!-- form-group // -->
+                    <div class="form-group">
+                        <label for="qty" class="col-sm-3 control-label">Quantity</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="quantity" id="qty"
+                                value="@ViewBag.taste.quantity">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="boxImg boxImgMain">
+                        <img src="/Admin/img/@ViewBag.taste.image" height="100%" width="200px" height="70px">
+                      </div>
+                    
+                      <div class="imgText">
+                        <label class="control-label small">Choose a new photo to update the main photo
+                          (jpg/png):</label>
+                        <input type="file" name="image">
+                      </div>
+                    </div>
+
+                    <hr>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </div> <!-- form-group // -->
+                </form>
+            </div><!-- panel-body // -->
+        </section><!-- panel// -->
+
+
+    </div> <!-- container// -->
+</body>

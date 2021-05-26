@@ -9,7 +9,7 @@ using MochiSweets.Models;
 namespace MochiSweets.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20210513172550_MochiSweets")]
+    [Migration("20210523163509_MochiSweets")]
     partial class MochiSweets
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -71,6 +71,9 @@ namespace MochiSweets.Migrations
                     b.Property<string>("gender")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<string>("image")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<string>("passwordCustomer")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
@@ -94,8 +97,8 @@ namespace MochiSweets.Migrations
                     b.Property<string>("addressDefault")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<string>("addressStatus")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<int>("addressStatus")
+                        .HasColumnType("int");
 
                     b.Property<string>("city")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
@@ -235,6 +238,9 @@ namespace MochiSweets.Migrations
                     b.Property<string>("detail")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<int>("numberOfCakes")
+                        .HasColumnType("int");
+
                     b.Property<double>("price")
                         .HasColumnType("double");
 
@@ -288,8 +294,11 @@ namespace MochiSweets.Migrations
                     b.Property<int>("categoryID")
                         .HasColumnType("int");
 
-                    b.Property<string>("quantity")
+                    b.Property<string>("image")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<int>("quantity")
+                        .HasColumnType("int");
 
                     b.Property<string>("tasteName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");

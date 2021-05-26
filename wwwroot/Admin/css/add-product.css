@@ -34,3 +34,10 @@ input[type="file"] {
     color: black;
   }
 
+  .form-group .col-sm-3 {
+    font-weight: 500;
+  }
+
+  .textMain {
+    height: 60px;
+  }

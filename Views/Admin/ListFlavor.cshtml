@@ -1,0 +1,143 @@
+@{
+    ViewData["Title"] = "ListCategory";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MS Admin 2 - Product</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="css/list-product.css" rel="stylesheet">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    @* <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet"> *@
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="textL">
+            <h1>List Taste</h1>
+        </div>
+        <div class="boxS">
+            <div>
+                <a href="AddFlavor?categoryID=@ViewBag.categoryID" class="btn btn-primary btn-block text-uppercase mb-3" id="boxAdd">ADD NEW
+                    TASTE</a>
+            </div>
+            <div>
+                <form
+                    class="boxSe d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+
+                    <div id="box-search" class="input-group inputG">
+                       <input hidden name="categoryID" value="@ViewBag.categoryID">
+                        <input type="text" name="search" class="form-control bg-light border-0 small"
+                            placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2"
+                            value="@ViewBag.search">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-search fa-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <table class="table  tm-table-small tm-product-table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">TASTE NAME</th>
+                    <th scope="col">QUANTITY</th>
+                    <th scope="col">IMAGES</th>
+                    @* <th scope="col">NUMBER OF FLAVORS</th> *@
+                    @* <th scope="col">IN STOCK</th>
+                    <th scope="col">IMAGES</th> *@
+                    @* <th scope="col">NUMBER OF PRODUCTS</th> *@
+                    <th scope="col"></th>
+                    <th scope="col">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.listTaste)
+                {
+                  @if(item.categoryID == ViewBag.categoryID){
+                    <tr>
+                        <td>@item.tasteID</td>
+                        <td class="tm-product-name"><a href="#"
+                            class="text-a">@item.tasteName</a></td>
+                        <td>@item.quantity</td>    
+                        <td><img src="/Admin/img/@item.image" width="100px" height="70px"></td> 
+                        <td><a href="/Admin/UpdateFlavor?tasteID=@item.tasteID&&categoryID=@ViewBag.categoryID" class="boxAction">Sửa</a>
+                            <a href="/Admin/deleteTaste?tasteID=@item.tasteID&&categoryID=@ViewBag.categoryID" class="boxAction">Xóa</a>
+                        </td>
+                    </tr>   
+                  }
+                }
+
+            </tbody>
+        </table>
+        <p>page : @ViewBag.page / @ViewBag.total</p>
+
+        <div class="boxLimit">
+            @if (@ViewBag.page != 1)
+            {
+                <div class="boxNext">
+                    <a href="?search=@ViewBag.search&&page=@ViewBag.previousPage"><i
+                        class="fas fa-angle-double-left"></i></a>
+                </div>
+            }
+            @if (@ViewBag.page != 1)
+            {
+                <div class="boxNum">
+                    <a href="?search=@ViewBag.search&&page=@ViewBag.previousPage">@ViewBag.previousPage</a>
+                </div>
+            }
+
+            @if (@ViewBag.total != 1 || @ViewBag.page == 1)
+            {
+                <div class="boxNum boxC">
+                    <a href="?search=@ViewBag.search&&page=@ViewBag.page">@ViewBag.page</a>
+                </div>
+            }
+            @if ((@ViewBag.total != 2 || (@ViewBag.page == 1 && @ViewBag.total != 1)) && @ViewBag.nextPage <=
+            @ViewBag.total)
+            {
+                <div class="boxNum">
+                    <a href="?search=@ViewBag.search&&page=@ViewBag.nextPage">@ViewBag.nextPage</a>
+                </div>
+            }
+
+            @if (@ViewBag.page != @ViewBag.total && @ViewBag.total != 0)
+            {
+                <div class="boxNext">
+                    <a href="?search=@ViewBag.search&&page=@ViewBag.nextPage"><i
+                        class="fas fa-angle-double-right"></i></a>
+                </div>
+            }
+        </div>
+    </div>
+</body>

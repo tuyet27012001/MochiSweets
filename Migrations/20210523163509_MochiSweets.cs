@@ -47,7 +47,8 @@ namespace MochiSweets.Migrations
                     gender = table.Column<string>(nullable: true),
                     birthDate = table.Column<string>(nullable: true),
                     email = table.Column<string>(nullable: true),
-                    passwordCustomer = table.Column<string>(nullable: true)
+                    passwordCustomer = table.Column<string>(nullable: true),
+                    image = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -93,7 +94,8 @@ namespace MochiSweets.Migrations
                     detail = table.Column<string>(nullable: true),
                     quantity = table.Column<int>(nullable: false),
                     product_status = table.Column<int>(nullable: false),
-                    categoryID = table.Column<int>(nullable: false)
+                    categoryID = table.Column<int>(nullable: false),
+                    numberOfCakes = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -113,8 +115,9 @@ namespace MochiSweets.Migrations
                     tasteID = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     tasteName = table.Column<string>(nullable: true),
-                    quantity = table.Column<string>(nullable: true),
-                    categoryID = table.Column<int>(nullable: false)
+                    quantity = table.Column<int>(nullable: false),
+                    categoryID = table.Column<int>(nullable: false),
+                    image = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -138,7 +141,7 @@ namespace MochiSweets.Migrations
                     district = table.Column<string>(nullable: true),
                     address = table.Column<string>(nullable: true),
                     customerName = table.Column<string>(nullable: true),
-                    addressStatus = table.Column<string>(nullable: true),
+                    addressStatus = table.Column<int>(nullable: false),
                     addressDefault = table.Column<string>(nullable: true),
                     customerID = table.Column<int>(nullable: false)
                 },

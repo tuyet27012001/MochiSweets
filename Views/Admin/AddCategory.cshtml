@@ -1,0 +1,63 @@
+
+@{
+ViewData["Title"] = "Admin - AddProduct";
+Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MS Admin 2 - Product</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link href="css/add-product.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <section class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title textMain">ADD CATEGORY</h3>
+            </div>
+            <div class="panel-body">
+
+                <form method="POST" action="AddCategory" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="name" class="col-sm-3 control-label">Name Category</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="categoryName" id="name" placeholder="name">
+                        </div>
+                    </div> <!-- form-group // -->
+                    <hr>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </div> <!-- form-group // -->
+                </form>
+            </div><!-- panel-body // -->
+        </section><!-- panel// -->
+
+
+    </div> <!-- container// -->
+</body>

@@ -12,6 +12,7 @@ namespace MochiSweets.Models
     public string birthDate { get; set; }
     public string email { get; set; }
     public string passwordCustomer { get; set; }
+    public string image {get ; set;}
     public List<DeliveryAddress> ListAddress { get; set; }
     // public virtual ICollection<DeliveryAddress> DeliveryAddresss { get; set; }
     public Customer() { }

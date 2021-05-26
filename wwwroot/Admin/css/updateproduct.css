@@ -47,4 +47,42 @@ input[type="file"] {
     margin-left: 15px;
 }
 
+.boxLinkImage {
+  margin-left: 12px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
 
+.boxImgMain img{
+  width: 500px;
+}
+
+.imgText{
+  padding: 10px;
+}
+
+.boxAddImg{
+  padding-bottom: 25px;
+  padding-left: 10px;
+  padding-top: 30px;
+}
+
+.boxAddImg label {
+  width: 300px;
+}
+
+.boxA {
+  display: table;
+}
+
+.textMain {
+  height: 40px;
+}
+
+.form-group .col-sm-3 {
+  font-weight: 500;
+}
+
+.b {
+  margin-left: 14px;
+}
