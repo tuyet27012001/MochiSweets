@@ -42,6 +42,7 @@ namespace MochiSweets.Migrations
                 {
                     customerID = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    userName = table.Column<string>(nullable: true),
                     customerName = table.Column<string>(nullable: true),
                     phonenumber = table.Column<string>(nullable: true),
                     gender = table.Column<string>(nullable: true),

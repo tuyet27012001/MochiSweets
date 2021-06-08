@@ -1,0 +1,28 @@
+.m5{
+  margin-top: 11rem!important;
+}
+
+.form-group input{
+  font-size: 15px;
+}
+
+.bn{
+  font-size: 15px;
+}
+
+form.user .form-control-user {
+  /* font-size: .8rem; */
+  border-radius: 10rem;
+  padding: 1.5rem 1rem;
+}
+
+form.user .btn-user {
+  /* font-size: .8rem; */
+  border-radius: 10rem;
+  padding: .75rem 1rem;
+}
+.bg-login-image{
+  background: url("/Admin/img/logoLogin.jpg");
+  background-position: center;
+  background-size: cover;
+}

@@ -28,6 +28,7 @@ namespace MochiSweets
       services.AddControllersWithViews();
       services.AddScoped<MyDbContext, MyDbContext>();
       services.AddScoped<AdminService, AdminService>();
+      services.AddScoped<UserService, UserService>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

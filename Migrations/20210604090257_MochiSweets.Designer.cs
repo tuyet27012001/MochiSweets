@@ -9,7 +9,7 @@ using MochiSweets.Models;
 namespace MochiSweets.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20210523163509_MochiSweets")]
+    [Migration("20210604090257_MochiSweets")]
     partial class MochiSweets
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -78,6 +78,9 @@ namespace MochiSweets.Migrations
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("phonenumber")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("userName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("customerID");

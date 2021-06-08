@@ -545,6 +545,22 @@ namespace MochiSweets.Services
       return null;
     }
 
+    public bool ForgotPassword(string password, string passwordNew)
+    {
+      MD5 md5Hash = MD5.Create();
+      Account ac = dbContext.Account.FirstOrDefault(p => p.accountID == 1);
+      if (ac != null)
+      {
+        if(VerifyMd5Hash(md5Hash, password, ac.passwordAccount)){
+          ac.passwordAccount = GetMd5Hash(md5Hash,passwordNew);
+          dbContext.Update(ac);
+          dbContext.SaveChanges();
+          return true;
+        }
+      }
+      return false;
+    }
+
     // public bool loginAdmin(string userName, string password)
     // {
     //   Account ac = dbContext.Account.FirstOrDefault(p => p.tasteID == tasteID);

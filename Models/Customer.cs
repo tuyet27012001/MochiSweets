@@ -6,6 +6,7 @@ namespace MochiSweets.Models
   public class Customer
   {
     public int customerID { get; set; }
+    public string userName {get; set;}
     public string customerName { get; set; }
     public string phonenumber { get; set; }
     public string gender { get; set; }

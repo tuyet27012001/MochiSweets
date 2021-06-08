@@ -43,6 +43,7 @@ namespace MochiSweets.Models
       modelBuilder.Entity<Customer>(entity =>
       {
         entity.HasKey(x => x.customerID);
+        entity.Property(x => x.userName);
         entity.Property(x => x.customerName);
         entity.Property(x => x.phonenumber);
         entity.Property(x => x.gender);
@@ -112,6 +113,7 @@ namespace MochiSweets.Models
         entity.Property(x => x.quantity);
         entity.Property(x => x.product_status);
         entity.Property(x => x.categoryID);
+        entity.Property(x => x.numberOfCakes);
       });
 
 
@@ -128,6 +130,7 @@ namespace MochiSweets.Models
         entity.Property(x => x.tasteName);
         entity.Property(x => x.quantity);
         entity.Property(x => x.categoryID);
+        entity.Property(x => x.image);
       });
      
 

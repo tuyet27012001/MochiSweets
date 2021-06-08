@@ -397,15 +397,22 @@ namespace MochiSweets.Controllers
       }
       return View();
     }
-    // [HttpPost("/Admin/LoginAdmin")]
-    // public IActionResult LoginAdmin(string userName, string password)
-    // {
-    //   bool x = adminService.loginAdmin(userName, password);
-    //   if(x == true){
-    //     return Redirect("/Admin/Index");
-    //   }
-    //   return View();
-    // }
+
+    [HttpGet("/Admin/ForgotPassword")]
+    public IActionResult ForgotPassword()
+    {
+      return View();
+    }
+
+    [HttpPost("/Admin/ForgotPassword")]
+    public IActionResult ForgotPassword(string password, string passwordNew)
+    {
+      bool x = adminService.ForgotPassword(password, passwordNew);
+      if(x == true){
+        return Redirect("/Admin/Index");
+      }
+      return View();
+    }
 
   }
 }

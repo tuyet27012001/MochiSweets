@@ -78,6 +78,9 @@ namespace MochiSweets.Migrations
                     b.Property<string>("phonenumber")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<string>("userName")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.HasKey("customerID");
 
                     b.ToTable("Customer");
